@@ -191,7 +191,8 @@ a:focus {
 }
 .skin-black-light .sidebar-form {
   border-radius: 3px;
-  border: 1px solid #d2d6de;
+ /* border: 1px solid #d2d6de;*/
+  border: 1px solid transparent;
   margin: 10px 10px;
 }
 .skin-black-light .sidebar-form input[type="text"],
