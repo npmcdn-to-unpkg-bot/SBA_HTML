@@ -285,12 +285,24 @@ desired effect
         	<div class="box">
                 <div class="box-header with-border">
                 	<h3 class="box-title">Formulario</h3>
-                    
                 </div>
             	<!-- /.box-header -->
             
-                <div class="box-body">
+                <div class="box-body aire">
                   
+                  <!-- ERROR FORMULARIO -->
+                  <div class="row">
+                  	<div class="col-lg-12">
+                    	<div class="alert alert-danger alert-dismissible">
+                        	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                            - Verifique el campo nombre<br>
+                            - Verifique el campo apellido<br>
+                            - Verifique el campo CUIT
+                          </div>
+                    </div>
+                  </div>
+                  <!-- / ERROR FORMULARIO -->
                   
                   <form action="">
                   	<div class="row">
@@ -314,7 +326,7 @@ desired effect
                             </div>
                         </div>
                         <!-- /.col -->
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             <div class="form-group">
                                 <select class="form-control select2" style="width: 100%;">
                                   <option selected="selected">CONDICION FISAL</option>
@@ -329,22 +341,52 @@ desired effect
                         </div>
                         <!-- /.col -->
                         
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             
                             <div class="form-group">
                                 <label>
-                                  <input type="radio" name="r3" class="flat-red" checked> Fisica
+                                  <input type="radio" name="r3" class="flat-red" id="cFisica" value="f" checked> Fisica
                                 </label>
                                 &nbsp;&nbsp;&nbsp;
                                 <label>
-                                  <input type="radio" name="r3" class="flat-red"> Juridica
+                                  <input type="radio" name="r3" class="flat-red" value="j"> Juridica
                                 </label>
                               </div>
                         </div>
                         <!-- /.col -->
                         
+                        <div class="col-lg-2">
+                        	
+                            <div class="form-group" id="sSexo">
+                                <label>
+                                  <input type="radio" name="r4" class="flat-red" id="cFisica" value="f" checked> Masculino
+                                </label>
+                                &nbsp;&nbsp;&nbsp;
+                                <label>
+                                  <input type="radio" name="r4" class="flat-red" value="j"> Femenino
+                                </label>
+                              </div>
+                              
+                            
+                        </div>
+                        <!-- /.col -->
+                        
                     </div>
                     <!-- /.row -->
+                    
+                    <div class="row">
+                        <div class="col-lg-6">
+                        	<div class="form-group">
+                              <label>CBU</label>
+                              <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                         
+                    </div>
                     
                     <div class="row">
                         <div class="col-lg-6">
@@ -402,17 +444,15 @@ desired effect
                     <div class="row">
                         <div class="col-lg-6">
                         	 <div class="form-group">
-                                <label>Provincia</label>
-                                <select class="form-control select2" style="width: 100%;">
-                                  <option selected="selected">Alabama</option>
-                                  <option>Alaska</option>
-                                  <option>California</option>
-                                  <option>Delaware</option>
-                                  <option>Tennessee</option>
-                                  <option>Texas</option>
-                                  <option>Washington</option>
-                                </select>
-                              </div>
+                              <label>Fecha de nacimiento</label>
+                              <div class="input-group">
+                                	<div class="input-group-addon">
+                                		<i class="fa fa-calendar" aria-hidden="true"></i>
+
+                                	</div>
+                                	<input type="text" class="form-control">
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="col-lg-6">
@@ -601,9 +641,11 @@ desired effect
      fixed layout. -->
      
 <script>
+
   $(function () {
     
 	/** SOLO FORMULARIOS **/
+	
     $(".select2").select2();
 	
 	$("[data-mask]").inputmask();
@@ -613,6 +655,19 @@ desired effect
       checkboxClass: 'icheckbox_flat-green',
       radioClass: 'iradio_flat-blue'
     });
+	
+	/*
+	$("#cFisica").on("click",function(){
+		alert("aca");
+	});
+	*/
+	$("#cFisica").on('ifChecked', function(event){
+		$("#sSexo").show();
+	});
+	
+	$("#cFisica").on('ifUnchecked', function(event){
+		$("#sSexo").hide();
+	});
 	
 	/** /SOLO FORMULARIOS **/
 	
