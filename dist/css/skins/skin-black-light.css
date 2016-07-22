@@ -191,7 +191,6 @@ a:focus {
 }
 .skin-black-light .sidebar-form {
   border-radius: 3px;
- /* border: 1px solid #d2d6de;*/
   border: 1px solid transparent;
   margin: 10px 10px;
 }
@@ -334,7 +333,7 @@ a:focus {
 
 /**FORM**/
 .busqueda-normal {
-	height:30px;
+/*	height:30px;*/
 	font-size:12px;
 }
 
@@ -353,6 +352,7 @@ a:focus {
   top: 0px;
   left: 0px;
   cursor: default;
+  z-index: 10;
 }
 
 /* Line 828 */
@@ -527,6 +527,10 @@ a:focus {
 	margin-bottom:10px;
 }
 
+.box-certificado.registrado, .box-certificado.registrado .list-group .list-group-item {
+	background-color:#337ab7;
+}
+
 .box-certificado.sin-tramite, .box-certificado.sin-tramite .list-group .list-group-item {
 	background-color:#d73925;
 }
@@ -571,7 +575,7 @@ a:focus {
 .pos-flag {
 	
 position:absolute; 
-margin-top:83px; margin-left:83px; z-index:999;
+margin-top:83px; margin-left:83px; z-index:9;
 }
 
 .label-carrera {
